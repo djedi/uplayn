@@ -1,7 +1,6 @@
 * NOTE: THE SETTINGS FILE IS FOR THE LIVE SITE. FOR CHANGES TO YOUR LOCAL DEV
 ENVIRONMENT, CREATE A local_settings.py FILE TO OVERWRITE SETTINGS. SEE BELOW
 FOR MORE INFO
-
 --
 
 The goal of uplayn.com will be to allow groups of people that like to get
@@ -20,3 +19,6 @@ own free page that is simple to use, easy to set up and free of charge.
 
 I've decided to open source this on github to give back to the open source
 community and help Django noobs have access to some code.
+
+Right now, this is just an idea. There is still lots of work to do before even
+thinking about pushing it to a live site.

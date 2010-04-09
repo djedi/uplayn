@@ -1,10 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
-class Group(models.Model):
-    name = models.CharField(max_length=128)
-    subdomain = models.SlugField()
+class GroupProfile(models.Model):
+    group = models.OneToOneField(Group)
+    subdomain = models.SlugField(unique=True)
+    city = models.CharField(max_length=64)
+    state = models.CharField(max_length=32)
+    zip_code = models.CharField(max_length=10)
 
-class Profile(models.Model):
+class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    groups = models.ManyToManyField(Group)
+    sms_number = models.CharField(max_length=32)

@@ -5,6 +5,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^start-group/$', 'uplayn.common.views.start_group',
+        name='start_group'),
     # Example:
     # (r'^uplayn/', include('uplayn.foo.urls')),
 

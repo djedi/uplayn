@@ -127,3 +127,12 @@ h1 {
 .n_tl {background:url(../img/n_tl.gif) 0 0 no-repeat}
 .n_tr {background:url(../img/n_tr.gif) 100% 0 no-repeat; padding:1px 20px}
 /* end news border corners*/
+
+form p label {
+	display: inline-block;
+	width: 120px;
+	text-align: right;
+}
+ul.errorlist {
+	color: red;
+}
