@@ -1,6 +1,6 @@
 # Django settings for uplayn project.
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -10,7 +10,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'C:/webs/uplayn.com/uplayn.db3'             # Or path to database file if using sqlite3.
+DATABASE_NAME = ''             # Or path to database file if using sqlite3.
 DATABASE_USER = ''             # Not used with sqlite3.
 DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
@@ -81,3 +81,10 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'uplayn.common',
 )
+
+SERVE_STATIC_MEDIA = False
+
+try:
+    from local_settings import *
+except:
+    pass

@@ -10,12 +10,12 @@ body  {
 h1 {
 	color:#84be19;
 }
-#container { 
+#container {
 	width: 900px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
 	background: #FFFFFF;
 	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
-} 
-#header { 
+}
+#header {
 	background: #DDDDDD;
 	width: 900px;
 	height: 316px;
@@ -24,7 +24,7 @@ h1 {
 	width:900px;
 	height:270px;
 	background:url(../img/headerBackground.jpg) no-repeat left top;
-} 
+}
 #header h1 {
 	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
 	padding: 200px 40px 0 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
@@ -39,17 +39,18 @@ h1 {
 	margin:20px 40px 20px 0;
 }
 #sidebar1 a, #mainContent a {
-	color:#84be19;
+	color:#044F00;
 	font-weight: bold;
 }
-#mainContent { 
+#mainContent {
 	margin: 20px 280px 20px 40px; /* the right margin on this div element creates the column down the right side of the page - no matter how much content the sidebar1 div contains, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends. */
-} 
+	text-align: justify;
+}
 .productPic {
 	float:left;
 	margin:0 20px 15px 0;
 }
-#footer { 
+#footer {
 	height:90px;
 	background:url(../img/footerBackground.jpg) repeat-x left top;
 }
@@ -62,7 +63,7 @@ h1 {
 	padding-top:28px;
 	margin:0 240px 0 0;
 	text-align:center;
-} 
+}
 .footerLink  {
 	color:#292b25;
 	text-decoration:underline;
@@ -86,7 +87,7 @@ h1 {
 	float: left;
 	width: 100%;
 }
-#navcontainer ul li { 
+#navcontainer ul li {
 	display: inline;
 }
 #navcontainer ul li a {
@@ -114,7 +115,7 @@ h1 {
 .bl {background:url(../img/bl.gif) 0 100% no-repeat}
 .br {background:url(../img/br.gif) 100% 100% no-repeat}
 .tl {background:url(../img/tl.gif) 0 0 no-repeat}
-.tr {background:url(../img/tr.gif) 100% 0 no-repeat; padding:1px 20px} 
+.tr {background:url(../img/tr.gif) 100% 0 no-repeat; padding:1px 20px}
 /* end border corners*/
 /* begin news border corners*/
 .n_t {background: #eeeeee url(../img/n_dot.gif) 0 0 repeat-x;}
@@ -124,5 +125,5 @@ h1 {
 .n_bl {background:url(../img/n_bl.gif) 0 100% no-repeat}
 .n_br {background:url(../img/n_br.gif) 100% 100% no-repeat}
 .n_tl {background:url(../img/n_tl.gif) 0 0 no-repeat}
-.n_tr {background:url(../img/n_tr.gif) 100% 0 no-repeat; padding:1px 20px} 
+.n_tr {background:url(../img/n_tr.gif) 100% 0 no-repeat; padding:1px 20px}
 /* end news border corners*/
