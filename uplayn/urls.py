@@ -5,8 +5,10 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', 'uplayn.common.views.home', name="home"),
     url(r'^start-group/$', 'uplayn.common.views.start_group',
         name='start_group'),
+    url(r'^location/$', 'uplayn.groupsites.views.location', name="location"),
     # Example:
     # (r'^uplayn/', include('uplayn.foo.urls')),
 
@@ -19,7 +21,6 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('django.views.generic.simple',
-    url(r'^$', 'direct_to_template', {'template': 'home.html'}, name="home"),
     url(r'^story/$', 'direct_to_template', {'template': 'story.html'}, name="story"),
 )
 

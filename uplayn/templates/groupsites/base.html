@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>{% block title %}U Play'n?{% endblock %}</title>
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/groupsites.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1>{{ group.group }}</h1>
+			<ul class="menu">
+				<li><a href="{% url home %}">Home</a></li>
+				<li><a href="{% url location %}">Where We Play</a></li>
+				<li><a href="#">Calendar</a></li>
+				<li><a href="#">Photo Gallery</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Links</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			{% block content %}
+				<p>Please extend the content block...</p>
+			{% endblock %}
+		</div>
+		<div id="footer">
+
+		</div>
+	</div>
+</body>
+</html>

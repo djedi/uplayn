@@ -1,3 +1,5 @@
+import re
+
 from django import forms
 from django.contrib.auth.models import User, Group
 
@@ -30,13 +32,25 @@ class StartGroupForm(forms.Form):
     def clean_subdomain(self):
         """
         Check to make sure subdomain is unique
+        Also, don't allow certain subdomains like 'www'
         """
-        data = self.cleaned_data['subdomain']
-        try:
-            subdomain = models.GroupProfile.objects.get(subdomain__iexact=data)
-        except models.GroupProfile.DoesNotExist:
-            return data
-        raise forms.ValidationError("This subdomain is already taken. Please choose another.")
+        subdomain = self.cleaned_data['subdomain']
+        exists = models.GroupProfile.objects.filter(
+            subdomain__iexact=subdomain).count() == 1
+        if exists:
+            raise forms.ValidationError("This subdomain is already taken. Please choose another.")
+
+        reserved = ('www', 'admin', 'forum', 'blog', 'ultimate', 'basketball')
+        if subdomain in reserved:
+            raise forms.ValidationError("This subdomain is reserved. Please choose another.")
+
+        if not re.search('^[a-z\-0-9]*$', subdomain):
+            raise forms.ValidationError("This subdomain is invalid. Please enter lowercase letters, numbers and dashes only.")
+
+        if not re.search('^[a-z0-9]', subdomain):
+            raise forms.ValidationError("Your subdomain must begin with a lowercase letter or number.")
+
+        return subdomain
 
     def save(self):
         user = User.objects.create_user(
