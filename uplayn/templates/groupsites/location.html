@@ -5,5 +5,6 @@
 {% endblock %}
 
 {% block content %}
-    Map will go here...
+    <p>Address: {{ group.address_string }}</p>
+    <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr={{ group.map_location|urlencode }}&amp;daddr=&amp;geocode=&amp;gl=us&amp;hl=en&amp;mra=mi&amp;mrsp=0&amp;sz=17&amp;sll={{ group.map_location|urlencode }}&amp;sspn=0.004761,0.011458&amp;ie=UTF8&amp;t=h&amp;ll={{ group.map_location|urlencode }}&amp;spn=0.004761,0.011458&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=40.657464,-111.918477&amp;daddr=&amp;geocode=&amp;gl=us&amp;hl=en&amp;mra=mi&amp;mrsp=0&amp;sz=17&amp;sll={{ group.map_location|urlencode }}&amp;sspn=0.004761,0.011458&amp;ie=UTF8&amp;t=h&amp;ll={{ group.map_location|urlencode }}&amp;spn=0.004761,0.011458" style="color:#0000FF;text-align:left">View Larger Map</a></small>
 {% endblock %}

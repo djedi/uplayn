@@ -3,7 +3,8 @@ class SubdomainMiddleware:
 
     def process_request(self, request):
         domain_parts = request.get_host().split('.')
-        if (len(domain_parts) > 2):
+        if (len(domain_parts) > 2) or \
+            (len(domain_parts) == 2 and domain_parts[1][0:9] == 'localhost'):
             subdomain = domain_parts[0]
             if (subdomain.lower() == 'www'):
                 subdomain = None

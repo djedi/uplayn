@@ -5,32 +5,29 @@
 {% endblock %}
 
 {% block content %}
-	{{ weather }}
-<div>
-	<div style="padding-top: 2px;" class="modlabel">
-		{{ weather.city }}
+<div class="weather">
+	<div class="city">
+		<a href="http://www.google.com/search?q=weather+{{ weather.city|urlencode }}">{{ weather.city }}</a>
 	</div>
-	<div>
-		<div>
-			<div>
-				<img width="40" height="40" alt="{{ weather.condition }}" src="{{ weather.icon }}" /><br/>
-			</div>
-			<div>{{ weather.temp_f }}°F</div>
-			<div>
-				Current: {{ weather.condition }}<br/>
-				Wind: {{ weather.wind_condition }}<br/>
-				Humidity: {{ weather.humidity }}
-			</div>
+	<div class="current">
+		<div class="img">
+			<img width="40" height="40" alt="{{ weather.condition }}" src="{{ weather.icon }}" /><br/>
 		</div>
-		<div>
-			{% for forecast in weather.forecasts %}
-				<div title="{{ forecast.condition }}">
-					{{ forecast.day_of_week }}<br/>
-					<img width="40" height="40" alt="{{ forecast.condition }}" src="{{ forecast.icon }}"/><br/>
-					<nobr>{{ forecast.high }}° | {{ forecast.low }}°</nobr>
-				</div>
-			{% endfor %}
+		<div class="temp">{{ weather.temp_f }}°F</div>
+		<div class="conditions">
+			Current: {{ weather.condition }}<br/>
+			Wind: {{ weather.wind_condition }}<br/>
+			Humidity: {{ weather.humidity }}
 		</div>
+	</div>
+	<div class="forecasts">
+		{% for forecast in weather.forecasts %}
+			<div title="{{ forecast.condition }}" class="forecast">
+				{{ forecast.day_of_week }}<br/>
+				<img width="40" height="40" alt="{{ forecast.condition }}" src="{{ forecast.icon }}"/><br/>
+				<nobr>{{ forecast.high }}° | {{ forecast.low }}°</nobr>
+			</div>
+		{% endfor %}
 	</div>
 </div>
 
