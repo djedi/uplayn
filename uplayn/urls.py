@@ -9,8 +9,8 @@ urlpatterns = patterns('',
     url(r'^start-group/$', 'uplayn.common.views.start_group',
         name='start_group'),
     url(r'^location/$', 'uplayn.groupsites.views.location', name="location"),
-    # Example:
-    # (r'^uplayn/', include('uplayn.foo.urls')),
+
+    (r'^groupadmin/', include('uplayn.groupadmin.urls')),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
     # to INSTALLED_APPS to enable admin documentation:

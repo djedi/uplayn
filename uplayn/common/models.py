@@ -16,3 +16,18 @@ class GroupProfile(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     sms_number = models.CharField(max_length=32, blank=True, null=True)
+
+class GameTime(models.Model):
+    # follows http://docs.python.org/library/datetime.html#datetime.date.weekday
+    WEEKDAY_CHOICES = (
+        (6, 'Sunday'),
+        (0, 'Monday'),
+        (1, 'Tuesday'),
+        (2, 'Wednesday'),
+        (3, 'Thursday'),
+        (4, 'Friday'),
+        (5, 'Saturday'),
+    )
+    group = models.ForeignKey(Group)
+    weekday = models.IntegerField(choices=WEEKDAY_CHOICES)
+    time = models.TimeField()
