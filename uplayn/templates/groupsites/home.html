@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block content %}
+
+{% include 'groupsites/signup.html' %}
+
 <div class="weather">
 	<div class="city">
 		<a href="http://www.google.com/search?q=weather+{{ weather.city|urlencode }}">{{ weather.city }}</a>

@@ -1,5 +1,5 @@
 body {
-	font-family: arial, sans-serif;
+	font-family: 'Cantarell', arial, sans-serif;
 }
 
 ul.nav {
@@ -15,6 +15,63 @@ ul.nav li {
 
 #content {
 	clear: both;
+}
+
+
+.signup {
+	float: left;
+}
+.yes {
+	color: green;
+}
+.no {
+	color: red;
+}
+.maybe {
+	color: orange;
+}
+.past {
+	background-color: #ccc;
+}
+td.player {
+	text-align: left !important;
+}
+.upcoming {
+	line-height: 30px;
+}
+.date {
+	float: left;
+}
+.buttons {
+	float: right;
+}
+.comment {
+	clear: both;
+	float: left;
+}
+input.comment_text {
+	width: 400px;
+}
+
+table.signups {
+	border-collapse: collapse;
+}
+table.signups th {
+	color: #ffffff;
+	background-color: #333;
+}
+table.signups tfoot tr {
+	border: 1px solid black;
+}
+table.signups tr.alt {
+	background-color: #e3e3e3;
+}
+table.signups tr.alt td.past {
+	background-color: #bbb;
+}
+.signups td, table.signups th {
+	padding: 1px 10px;
+	text-align: center;
 }
 
 .weather {
@@ -53,4 +110,8 @@ ul.nav li {
 	float: left;
 	text-align: center;
 	margin: 0 10px;
+}
+
+.strong {
+	font-weight: bold;
 }

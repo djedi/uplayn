@@ -12,6 +12,9 @@ urlpatterns = patterns('',
 
     (r'^groupadmin/', include('uplayn.groupadmin.urls')),
 
+    # django-registration urls
+    (r'^accounts/', include('registration.backends.default.urls')),
+
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
     # to INSTALLED_APPS to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),

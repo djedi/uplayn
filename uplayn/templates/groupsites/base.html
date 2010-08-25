@@ -4,6 +4,8 @@
 <head>
 	<title>{% block title %}U Play'n?{% endblock %}</title>
 	<link rel="stylesheet" href="{{ MEDIA_URL }}css/groupsites.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+	<link href='http://fonts.googleapis.com/css?family=Cantarell' rel='stylesheet' type='text/css'>
+	{% block head %}{% endblock %}
 </head>
 <body>
 	<div id="container">
@@ -12,10 +14,6 @@
 			<ul class="nav">
 				<li><a href="{% url home %}">Home / Sign Up</a></li>
 				<li><a href="{% url location %}">Where We Play</a></li>
-				<li><a href="#">Calendar</a></li>
-				<li><a href="#">Photo Gallery</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#">Links</a></li>
 			</ul>
 		</div>
 		<div id="content">
